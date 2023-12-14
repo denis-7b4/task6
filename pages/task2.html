@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Форма заказа</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/task2.css"/>
+    </head>
+    <body>
+        <div class="form_field">
+            <h2>Заказ</h2>
+            <h4>Для того, чтобы заказать работы по художественной росписи в вашем интерьере, заполните, пожалуйста, следующую форму. Мы свяжемся с вами.</h4>
+            <p>Поля, отмеченные <span class="aster">*</span>, являются обязательными.</p>
+            <form>
+                <div class="text_field">
+                    <label class="text_field_label" for="name"><span class="aster">*</span> Как к вам обращаться:</label>
+                    <input class="text_field_input" type="text" name="name" id="name" placeholder="Имя" autofocus required/>
+                </div>
+                <div class="text_field">
+                    <label class="text_field_label" for="email"><span class="aster">*</span> Ваш e-mail адрес:</label>
+                    <input class="text_field_input" type="email" name="email" id="email" placeholder="someone@mailserver.ru" required/>
+                </div>
+                <div class="text_field">
+                    <label class="text_field_label" for="phone">Номер вашего телефона:</label>
+                    <input class="text_field_input" type="tel" name="phone" id="phone" placeholder="+7(999)1234567"/>
+                </div>
+                <div class="text_field">
+                    <label class="text_field_label" for="city">Ваш город:</label>
+                    <input class="text_field_input" type="text" name="city" id="city" placeholder="Город" value="Челябинск" disabled/>
+                </div>
+                <fieldset>
+                    <legend>Предпочтительный вид связи:</legend>
+                    <div class="radio_field">
+                        <label class="radio_field_label" for="comm_email">E-mail</label>
+                        <input class="radio_field_btn" type="radio" name="pref_comm" id="comm_email" value="email" checked/>
+                        <label class="radio_field_label" for="comm_phone">Телефон</label>
+                        <input class="radio_field_btn" type="radio" name="pref_comm" id="comm_phone" value="phone"/>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend><span class="aster">*</span> Выберите вид работ, которые вам нужны:</legend>
+                    <div class="check_field">
+                        <label class="check_field_label" for="wall">Роспись стен</label>
+                        <input class="check_field_box" type="checkbox" name="kind" id="wall" value="wall"/>
+                        <label class="check_field_label" for="furniture">Роспись мебели</label>
+                        <input class="check_field_box" type="checkbox" name="kind" id="furniture" value="furniture"/>
+                        <label class="check_field_label" for="window">Окна обманки</label>
+                        <input class="check_field_box" type="checkbox" name="kind" id="window" value="window"/>
+                        <label class="check_field_label" for="other">Другое</label>
+                        <input class="check_field_box" type="checkbox" name="kind" id="other" value="other"/>
+                    </div>
+                </fieldset>
+                <div class="date_field">
+                    <label class="date_field_label" for="start"><span class="aster">*</span> Предпочтительная дата начала работ:</label>
+                    <input class="date_field_item" type="date" name="start" id="start" value="date" required/>
+                </div>
+                <fieldset>
+                    <legend><label class="week_days_label" for="days">Выберите дни проведения работ</label></legend>
+                <div class="week_days">
+                    <select class="week_days_item" name="days" multiple>
+                        <option>Понедельник</option>
+                        <option>Вторник</option>
+                        <option>Среда</option>
+                        <option>Четверг</option>
+                        <option>Пятница</option>
+                        <option>Суббота</option>
+                        <option>Воскресенье</option>
+                    </select>
+                <span style="font-size: small;">Удерживайте Ctrl или Shift, чтобы выбрать несколько дней.</span>
+                </div>
+                </fieldset>
+                <div class="btn">
+                    <button class="btn" type="submit" name="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

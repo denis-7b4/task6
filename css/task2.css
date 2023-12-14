@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+.aster{
+    color: #FF0000;
+    font-weight: bold;
+}
+body{
+    margin: 0 auto;
+    width: 750px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    /* background-color: #AAAACC; */
+    background-color: rgba(170, 170, 204, 0.8);
+}
+.form_field{
+    background: content-box linear-gradient(90deg, #AAAACC, #DDDDFF 30% 70%, #AAAACC);
+    border: 5px double;
+    border-radius: 20px;
+    padding: 10px;
+}
+h2{
+    font-size: 36px;
+    line-height: 10px;
+    letter-spacing: 10px;
+    text-align: center;
+    color: #7848ca;
+    /* margin: 25px; */
+}
+h4{
+    text-align: center;
+    line-height: 22px;
+}
+p{
+    font-weight: 500;
+    font-size: small;
+    font-style: italic;
+    line-height: 10px;
+    margin-bottom: 30px;
+}
+.text_field{
+    margin-bottom: 14px;
+}
+.text_field_label{
+    display: block;
+    margin-bottom: 4px;
+}
+.text_field_input{
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #FFFFFF;
+    background-clip: padding-box;
+    border: 1px solid #BDBDBD;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out;
+}
+.text_field_input::placeholder{
+    color: #212529;
+    opacity: 0.4;
+}
+.text_field_input:focus{
+    color: #212529;
+    background-color: #DDDDFF;
+    border-color: #BDBDBD;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+.text_field_input:disabled,
+.text_field_input[readonly]{
+    background-color: #E0E0E0E0;
+    opacity: 1;
+}
+fieldset{
+    margin-bottom: 12px;
+}
+legend{
+    font-size: 17px;
+}
+.radio_field{
+    font-size: 1rem;
+}
+.check_field{
+    font-size: 1rem;
+}
+.date_field{
+    margin-bottom: 10px;
+}
+.btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: 200px;
+}

@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Comforter Brush';
+    src: url("/fonts/ComforterBrush-Regular.ttf");
+}
+@font-face {
+    font-family: Pacifico;
+    src: url("/fonts/Pacifico-Regular.ttf");
+}
+html {
+    height: 100%;
+}
+body {
+    background: url("/images/bg.gif");
+}
+
+/* Шапка сайта */
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: url("/images/cosmosbk.gif");
+    z-index: 1;
+}
+.top_panel {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100%;
+    grid-template-areas:
+    "logo logo logo navbar navbar navbar navbar navbar navbar navbar navbar cart";
+}
+/* Кликабельное Brand logo */
+#logo_click {
+    grid-area: logo;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: left / contain no-repeat url("/images/shapka.gif");
+}
+/* Всплывающая подсказка "На главную" */
+#logo_to_main {
+    display: none;
+    margin-top: auto;
+    margin-bottom: 4%;
+    margin-left: 20%;
+    width: 25%;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 2px 4px 8px rgba(221, 238, 255, 0.5);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+/* Всплытие подсказки при наведении мыши на лого */
+#logo_click:hover #logo_to_main {
+    display: flex;
+}
+
+/* Навигационная панель */
+.navbar {
+    grid-area: navbar;
+}
+
+/* Ячейка для кнопки корзины */
+.cart_btn {
+    grid-area: cart;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Кнопка корзины */
+.cart {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FF802C;
+    transition: 0.1s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    box-shadow: 1px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Увеличиваем кнопку при наведении на нее */
+.cart:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 4px 8px rgba(255, 255, 255, 0.5);
+}
+.cart img {
+    width: 50px;
+    height: 50px;
+}
+  
+/* Счетчик товаров */
+.cart_num {
+    position: absolute;
+    background-color: #D62240;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+/* Main content */
+#content {
+    display: flex;
+    margin-top: 11vh;
+    justify-items: center;
+    flex-direction: column;
+}
+#content_header {
+    display: flex;
+    margin: auto;
+    padding: 0.5rem 1rem 2rem 1rem;
+    font-family: Pacifico;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px #000000;
+    line-height: 4rem;
+    background-color: #DDDDDD;
+    color: #7B3EEE;
+    box-shadow: 2px 4px 8px #000000;
+    border-radius: 1rem;
+}
+/*  Поле для карточек товаров */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    width: 100%;
+    max-width: 1300px;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 30px;
+    row-gap: 40px;
+    margin: 1rem auto;
+}
+/* Карточка товара */
+.card {
+    width: 300px;
+    min-height: 400px;
+    background-color: #FFFFFF;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Размещаем элементы в колонку */
+    border-radius: 10px;
+    transition: 0.2s;
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* При наведении на карточку - меняем цвет тени */
+.card:hover {
+    box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.5);
+}
+
+.card_top {
+    flex: 0 0 350px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+    position: relative;
+    overflow: hidden; /* Скрываем, что выходит за пределы */
+}
+
+/* Контейнер для картинки */
+.card_image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card_image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Встраиваем картинку в контейнер card_image */
+    transition: 0.2s;
+}
+
+/* При наведении - увеличиваем картинку */
+.card_image:hover > img {
+    transform: scale(1.1);
+}
+
+.card_bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+    padding: 10px;
+}
+
+.card_price {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #414141;
+}
+
+.card_price::after {
+    content: "₽";
+    margin-left: 4px;
+    position: relative;
+}
+.card_title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 120%;
+    color: #414141;
+    text-align: center;
+}
+.card_title:hover {
+    color: #ff6633;
+}
+.card_add {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #70c05b;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #70c05b;
+    border-radius: 4px;
+    cursor: pointer; /* Меняем курсор при наведении */
+    transition: 0.2s;
+    margin-top: auto; /* Прижимаем кнопку к низу карточки */
+}
+.card_add:hover {
+    border: 1px solid #ff6633;
+    background-color: #ff6633;
+    color: #fff;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.33); /* Небольшое затемнение на фоне */
+    z-index: 1000; /* Поверх всех окон */
+    width: 100%;
+    height: 100%;
+    display: none; /* По умолчанию скрываем окно */
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    overflow-y: scroll;
+}
+/* Стилизация контейнера окна */
+.popup_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Распределяем элементы внутри равномерно */
+    width: 100%;
+    max-width: 800px;
+    min-height: 300px;
+    background-color: #fff;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* Элементы окна (заголовок, список товаров, вывод стоимости) */
+.popup_item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+.popup_item:last-of-type {
+    border-bottom: none;
+}
+.popup_title {
+    font-size: 2rem;
+}
+/* Стили для вывода товара */
+.popup_product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.popup_product-wrap {
+    display: flex;
+    align-items: center;
+}
+.popup_product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+.popup_product-title {
+    max-width: 450px;
+    font-weight: 500;
+}
+.popup_product-price {
+    font-size: 18px;
+    margin-right: 15px;
+}
+/* Стили для кнопки удаления товара */
+.popup_product-delete {
+    font-size: 12px;
+    padding: 5px;
+    cursor: pointer;
+    color: #d62240;
+}
+/* Стили для вывода стоимости товаров */
+.popup_cost {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+.popup_cost-title {
+    margin-right: 25px;
+    font-size: 1.5rem;
+    color: #364364;
+    text-align: right;
+}
+.popup_cost-value {
+    font-size: 1.5rem;
+}
+/* Стили для кнопки закрытия окна */
+.popup_close {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    color: rgba(54, 67, 100, 0.7);
+    font-size: 20px;
+    border-radius: 8px;
+}
+.popup_close:hover {
+    color: rgb(54, 67, 100);
+}
+.popup_order {
+    display: block;
+    cursor: pointer;
+    width: 250px;
+    height: 40px;
+    margin: 0 auto 20px auto;
+    justify-content: center;
+    background-color: #77CC00;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px #000000;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.popup_order:hover:enabled {
+    background-color: #88DD11;
+    box-shadow: 2px 4px 8px #000000;
+}
+.popup_order:disabled,
+.popup_order[disabled] {
+    cursor: not-allowed;
+}
+.popup_open {
+    display: flex;
+}
+
+/* Подвал */
+.footer {
+    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: content-box linear-gradient(90deg, #DDDDFF, #BBAACC 30% 70%, #DDDDFF);
+    height: 6%;
+    color: #500000;
+    font-family: 'Comforter Brush';
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+/* Медиа запросы */
+/* Для различных Pad-ов и особо крупных смартфонов */
+@media screen and (max-width: 900px) {
+    .header {
+        height: 12%;
+    }
+    .top_panel {
+        grid-template-areas:
+        "logo logo logo logo logo logo navbar navbar navbar navbar cart cart";
+    }
+    #logo_to_main {
+        font-size: 0.9rem;
+        width: 50%;
+        line-height: 1rem;
+        margin-bottom: 7%;
+        margin-left: 10%;
+    }
+    #content {
+        margin-top: 13vh;
+    }
+    .footer {
+        letter-spacing: 0rem;
+        font-weight: 500;
+    }
+}
+/* Для средних смартфонов */
+@media screen and (max-width: 500px) {
+    .top_panel {
+        grid-template-areas:
+            "logo logo logo logo logo logo navbar navbar navbar cart cart cart";
+    }
+}
+/* Для особо мелких eXtra Small смартфонов */
+@media screen and (max-width: 320px) {
+    .header {
+        height: 15%;
+    }
+    .cart {
+        width: 50px;
+        height: 50px;
+        align-items: end;
+    }
+    .cart img {
+        width: 45px;
+        height: 45px;
+    }
+    .cart_num {
+        margin-left: 35px;
+        margin-bottom: 30px;
+    }
+    #content {
+        margin-top: 16vh;
+    }
+    .popup_container {
+        top: 25vh;
+    }
+    .popup_product {
+        flex-direction: column;
+        /* border: 1px solid #000000; */
+        box-shadow: 1px 2px 4px #000000;
+        border-radius: 10px;
+    }
+}

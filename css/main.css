@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Comforter Brush';
+    src: url("/fonts/ComforterBrush-Regular.ttf");
+}
+body{
+    background: #DDDDFF;
+    /* background: #000000; */
+    margin: 0;
+}
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background: left / contain no-repeat url("/images/shapka.gif"), url("/images/cosmosbk.gif");
+    color: #FF0000;
+}
+#logo_click{
+    float: left;
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+}
+/* #navigation {
+    position: relative;
+} */
+#container {
+    /* clear: both;
+    position: relative; */
+    /* top: 100px; */
+    margin-top: 120px;
+}
+ul.horiz-menu{
+    margin: 0;
+    padding: 4px;
+}
+ul.horiz-menu li{
+    display: inline;
+    margin-right: 5px;
+    /* border: 1px solid #FF0000; */
+    padding: 3px;
+}
+#content{
+    background: #DDDDFF;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5rem;
+}
+.img_main {
+    display: flex;
+    position: relative;
+    width: 30%;
+    left: 50%;
+    margin-left: -15%;
+    margin-bottom: 100px;
+    box-shadow: 0px 2px 18px #BBAACC;
+    border: 2px solid #500000;
+}
+.footer{
+    position: fixed;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #500000;
+    background: content-box linear-gradient(90deg, #DDDDFF, #BBAACC 30% 70%, #DDDDFF);
+    font-family: 'Comforter Brush';
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    height: 7%;
+}

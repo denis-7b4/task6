@@ -1,0 +1,44 @@
+[
+  {
+    "page": "#",
+    "image": "../images/goods/taburet_01.png",
+    "price": "15 000",
+    "title": "Венский табурет с ручной росписью"
+  },
+  {
+    "page": "#",
+    "image": "../images/goods/painting_01.png",
+    "price": "3 000",
+    "title": "Натюрморт с розой в вазе (холст, масло)"
+  },
+  {
+    "page": "#",
+    "image": "../images/goods/gaudi_01.png",
+    "price": "10 000",
+    "title": "Temple Expiatori de la Sagrada Família. А.Гауди (бумага, тушь, А1)"
+  },
+  {
+    "page": "#",
+    "image": "../images/goods/kalendar.png",
+    "price": "2 000",
+    "title": "Сытинский календарь (дерево, гуашь, лак)"
+  },
+  {
+    "page": "#",
+    "image": "../images/goods/haul.png",
+    "price": "1 000",
+    "title": "Витражный рисунок 'Ходячий замок Хаула. Х.Миядзаки' (бумага, смешаная техника)"
+  },
+  {
+    "page": "#",
+    "image": "../images/goods/doska.png",
+    "price": "2 000",
+    "title": "Разделочная доска (дерево, гуашь, лак)"
+  },
+  {
+    "page": "#",
+    "image": "../images/goods/flower.png",
+    "price": "1 000",
+    "title": "Витражный рисунок (бумага, акварель)"
+  }
+]
